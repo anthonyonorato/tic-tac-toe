@@ -62,7 +62,7 @@ body > header #player-o-title {
 
 body main {
     height: 60%;
-    width 60%:
+    width: 60%;
     margin: auto;
 }
 
@@ -75,7 +75,7 @@ body > main #game-container {
     margin: auto;
 }
 
-body > main > #game-container #first-column {
+body > main > #game-container  #first-column {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
 }
@@ -91,3 +91,64 @@ body > main > #game-container > #first-column .grid {
     line-height: 156px;
 }
 
+body > main > #game-container > #first-column #grid-0 {
+    border-width: 6px 0px 6px 6px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+}
+
+body > main > #game-container #second-column {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+body > main > #game-container > #second-column .grid {
+    border-width: 0px 6px 6px 6px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+    cursor: pointer;
+    font-size: 55px;
+    color: var(--color-turquoise);
+    text-align: center;
+    line-height: 156px;
+}
+
+body > main > #game-container > #second-column #grid-3 {
+    border-width: 6px 6px 6px 6px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+}
+
+body > main > #game-container > #third-column {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+body > main > #game-container > #third-column .grid {
+    border-width: 0px 6px 6px 0px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+    cursor: pointer;
+    font-size: 55px;
+    color: var(--color-turquoise);
+    text-align: center;
+    line-height: 156px;
+}
+
+body > main > #game-container > #third-column #grid-6 {
+    border-width: 6px 6px 6px 0px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+}
+
+body > main #restart-button {
+    position: relative;
+    left: 40%;
+    top: 5%;
+    background-color: var(--chartreuse);
+    font-size: 36px;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 32px 8px 32px;
+    cursor: pointer;
+}
