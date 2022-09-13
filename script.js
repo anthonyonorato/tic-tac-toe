@@ -56,18 +56,38 @@ const gameLogic = (grid, index) => {
     };
 };
 
-// DOM manipulation
+    // DOM manipulators
 
-let targetDOM = () => {
-    let gridID = "grid-"
-    const restartButton_DOM = document.querySelector("#restart-button");
-    const gridArray = [];
-    for (let i = 0; i < 9; i++) {
-        gridArray.push(gridID + i);
+    let targetDOM = () => {
+        let gridID = "grid-"
+        const restartButton_DOM = document.querySelector("#restart-button");
+        const gridArray = [];
+        for (let i = 0; i < 9; i++) {
+            gridArray.push(gridID + i);
+        };
+        const grids_DOM = gridArray.map((grid) => document.querySelector("#${grid}"));
+        const playerXTitle = document.getElementById("player-x-title");
+        const playerOTitle = document.getElementById("player-o-title");
+        return {restartButton_DOM, grids_DOM, gridArray, playerXTitle, playerOTitle};
     };
-    const grids_DOM = gridArray.map((grid) => document.querySelector("#${grid}"));
-    const playerXTitle = document.getElementById("player-x-title");
-    const playerOTitle = document.getElementById("player-o-title");
-    return {restartButton_DOM, grids_DOM, gridArray, playerXTitle, playerOTitle};
-};
 
+    // Event listeners
+
+    let addEventListener = () => {
+        let eventListenerCallBackFn = (grid, index) => {
+            grid.addEventListener("click", () => {
+                console.log("${targetDOM().gridArray[index]} has been clicked!");
+                // stops player from clicking a grid that isn't empty
+                if (grid.textContent !== "") {
+                    console.log("${targetDOM().gridArray[index]} is not empty. Try again.");
+                    return;
+                };
+                gameLogic(grid, index);
+            });
+        };
+        targetDOM().restartButton_DOM.addEventListener("click", () => {
+            console.log("Restart button has been clicked!");
+        });
+        targetDOM().grids_DOM.forEach(eventListenerCallBackFn);
+    })();
+})();
