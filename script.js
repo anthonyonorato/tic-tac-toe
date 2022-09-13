@@ -55,3 +55,19 @@ const gameLogic = (grid, index) => {
             break;
     };
 };
+
+// DOM manipulation
+
+let targetDOM = () => {
+    let gridID = "grid-"
+    const restartButton_DOM = document.querySelector("#restart-button");
+    const gridArray = [];
+    for (let i = 0; i < 9; i++) {
+        gridArray.push(gridID + i);
+    };
+    const grids_DOM = gridArray.map((grid) => document.querySelector("#${grid}"));
+    const playerXTitle = document.getElementById("player-x-title");
+    const playerOTitle = document.getElementById("player-o-title");
+    return {restartButton_DOM, grids_DOM, gridArray, playerXTitle, playerOTitle};
+};
+
