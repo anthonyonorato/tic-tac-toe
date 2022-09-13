@@ -26,5 +26,32 @@ const gameLogic = (grid, index) => {
             [0, 4, 8],
             [6, 4, 2]
         ];
-    }
-}
+        winCondition.forEach((condition) => {
+            const match = playerX.some((matchedCondition) => condition.includes(matchedCondition));
+            console.log(match);
+        });
+    };
+
+    // cycle the turn of the players
+    switch (cyclePlayerTurn()) {
+        // Player X's turn
+        case 0:
+            grid.textContent = "X";
+            playerX.push(index);
+            playerX.sort(sortCallBackFn);
+            console.log("Player X's array: ${playerX}");
+            // logs "Player O's turn"
+            targetDOM().playerXTitle.style.display = "none";
+            targetDOM().playerOTitle.style.display = "block";
+            break;
+        case 1:
+            grid.textContent = "0";
+            playerO.push(index);
+            playerO.sort(sortCallBackFn);
+            console.log("Player X's array: ${playerO}");
+            // logs "Player X's turn"
+            targetDOM().playerXTitle.style.display = "block";
+            targetDOM().playerOTitle.style.display = "none";
+            break;
+    };
+};
