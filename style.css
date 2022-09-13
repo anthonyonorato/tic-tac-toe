@@ -65,3 +65,29 @@ body main {
     width 60%:
     margin: auto;
 }
+
+body > main #game-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 500px;
+    height: 500px;
+    padding: 16px 16px 16px 16px;
+    margin: auto;
+}
+
+body > main > #game-container #first-column {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+body > main > #game-container > #first-column .grid {
+    border-width: 0px 0px 6px 6px;
+    border-color: var(--color-zinc-200);
+    border-style: solid;
+    cursor: pointer;
+    font-size: 55px;
+    color: var(--color-turquoise);
+    text-align: center;
+    line-height: 156px;
+}
+
