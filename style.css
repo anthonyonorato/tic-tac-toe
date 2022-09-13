@@ -16,3 +16,8 @@
     --color-camel: #efc9a4;
     --color-pink: #f59cba;
 }
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
