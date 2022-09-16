@@ -132,3 +132,8 @@ body {
 .winning-message-container.show {
     display: flex;
 }
+
+.footer {
+    color: white;
+    text-align: center;
+}
